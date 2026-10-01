@@ -1,0 +1,727 @@
+[
+  {
+    "id": "c2_ep1_morning_after",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "advanceDays": 1,
+      "tod": "morning"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "সকাল ৮:২০। রিফাতের বেডরুমে পর্দার ফাঁক দিয়ে আলো আসছে। আয়শা বিছানার একপাশে বসে আছে। চুল এলোমেলো। চোখের নিচে হালকা কালি।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি ঘুমিয়েছো?"
+      },
+      {
+        "speaker": "mc",
+        "text": "না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আমিও না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা চাদর মুষ্টিবদ্ধ করে ধরে আছে। সে রিফাতের দিকে তাকায়, আবার চোখ নামিয়ে নেয়।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "গতটা… কেউ জানবে না। আমি কাউকে বলবো না।"
+      },
+      {
+        "speaker": "mc",
+        "text": "জানি।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি কি আমাকে এখান থেকে বিদায় করবে?"
+      },
+      {
+        "speaker": "mc",
+        "text": "এখনো ভাবি নাই।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তাহলে আমাকে বলো কী করবো। আমি নিজে ঠিক করতে পারছি না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত উঠে বসে। আয়শার দিকে তাকায়।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আমি চাই তুমি আমাকে রাখো। যেভাবেই হোক।"
+      },
+      {
+        "speaker": "mc",
+        "text": "তুই কি সত্যিই বুঝতেছস তুই কী চাইতেছস?"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "বুঝতেছি। ভয়ও পাচ্ছি। কিন্তু তবুও চাই।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা ধীরে ধীরে রিফাতের হাতের দিকে বাড়ায়। এবার সে নিজে থেকেই হাত রাখে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "দিনের বেলা আমি নিচু তলায় থাকবো। কেউ কিছু বুঝবে না। রাতে… তুমি ডাকলে আমি আসবো।"
+      }
+    ],
+    "choices": [
+      {
+        "text": "বলো ‘এখানেই থাক, দিন-রাত’",
+        "effects": {
+          "meters": {
+            "affection": 12,
+            "corruption": 8,
+            "lust": 6
+          }
+        },
+        "goto": "c2_ep1_full_stay"
+      },
+      {
+        "text": "বলো ‘দিনে নিচু তলায় থাক, রাতে আয়’",
+        "effects": {
+          "meters": {
+            "lust": 10,
+            "corruption": 11,
+            "trust": 5
+          }
+        },
+        "goto": "c2_ep1_secret_arrangement"
+      },
+      {
+        "text": "বলো ‘আজকের মতো থাক, পরে দেখা যাবে’",
+        "effects": {
+          "meters": {
+            "trust": 3,
+            "affection": 4,
+            "lust": 2
+          }
+        },
+        "goto": "c2_ep1_temporary"
+      },
+      {
+        "text": "তাকে বিদায় করে দাও",
+        "effects": {
+          "meters": {
+            "trust": -8,
+            "affection": -10,
+            "lust": -5
+          }
+        },
+        "goto": "c2_ep1_send_away"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep2_daytime_tension",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "afternoon"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "দুপুর ২টা। বিল্ডিংয়ের সিঁড়িতে আয়শা দাঁড়িয়ে আছে। হাতে একটা পলিথিনের ব্যাগ। ভিতরে খাবার।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "রিফাত ভাই… তুমি খেয়েছো?"
+      },
+      {
+        "speaker": "mc",
+        "text": "না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "নিয়ে এসেছি। খেয়ে নাও।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত দরজা খুলে দাঁড়ায়। আয়শা ভিতরে ঢোকে না। করিডোরেই দাঁড়িয়ে থাকে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কাল রাতের পর… তুমি কি রাগ করেছো আমার ওপর?"
+      },
+      {
+        "speaker": "mc",
+        "text": "না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তাহলে কেন চোখের দিকে তাকাচ্ছো না?"
+      },
+      {
+        "speaker": "mc",
+        "text": "তাকাতেছি।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "মিথ্যে। তুমি এড়িয়ে যাচ্ছো।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা একটু কাছে আসে। তার গলা নামিয়ে বলে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আমি ভয় পাচ্ছি তুমি আমাকে দূরে সরিয়ে দিবে। তাই এসেছি।"
+      },
+      {
+        "speaker": "mc",
+        "text": "এখন দিনের বেলা। কেউ দেখতে পারে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "দেখুক। আমি আর পরোয়া করি না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত তার দিকে তাকায়। আয়শার চোখে একটা জেদ কাজ করছে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি কি আমাকে রাতে ডাকবে?"
+      },
+      {
+        "speaker": "mc",
+        "text": "জানি না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "ডাকো। আমি অপেক্ষা করবো।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা খাবারের ব্যাগটা রিফাতের হাতে দিয়ে এক ধাপ পিছিয়ে যায়।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আমি নিচু তলায় থাকবো। তুমি চাইলে নক করো। অথবা ফোন করো। আমি আসবো।"
+      }
+    ],
+    "choices": [
+      {
+        "text": "তাকে ভিতরে টেনে নাও",
+        "effects": {
+          "meters": {
+            "lust": 14,
+            "corruption": 9,
+            "affection": 5
+          }
+        },
+        "goto": "c2_ep2_pull_inside"
+      },
+      {
+        "text": "বলো ‘রাতে আয়’ এবং দরজা বন্ধ করো",
+        "effects": {
+          "meters": {
+            "lust": 11,
+            "corruption": 7,
+            "trust": 4
+          }
+        },
+        "goto": "c2_ep2_night_call"
+      },
+      {
+        "text": "বলো ‘আজ আর দরকার নেই’ এবং ব্যাগটা নাও",
+        "effects": {
+          "meters": {
+            "trust": 2,
+            "affection": -3,
+            "lust": -4
+          }
+        },
+        "goto": "c2_ep2_reject_today"
+      },
+      {
+        "text": "তার গালে হাত দিয়ে বলো ‘সাবধানে থাক’",
+        "effects": {
+          "meters": {
+            "affection": 10,
+            "trust": 6,
+            "lust": 3
+          }
+        },
+        "goto": "c2_ep2_soft_touch"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep3_night_return",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রাত ১১:৪৫। রিফাতের ঘরের দরজায় হালকা নক। আয়শা বাইরে দাঁড়িয়ে আছে। চুল খোলা, সাদা রঙের একটা লুজ পাঞ্জাবি পরে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "ডাকোনি। তবু এসে গেলাম।"
+      },
+      {
+        "speaker": "mc",
+        "text": "কেন?"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কারণ আমি থাকতে পারছি না নিচু তলায়। মনে হচ্ছিল তুমি হয়তো আমাকে ডাকবে না আর।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত দরজা খুলে দেয়। আয়শা ভিতরে ঢোকে। দরজা বন্ধ করে দেয় নিজে থেকেই।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি কি রাগ করেছো?"
+      },
+      {
+        "speaker": "mc",
+        "text": "না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তাহলে আমাকে কাছে ডাকো।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা একটু এগিয়ে আসে। তার শ্বাস শোনা যাচ্ছে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কাল রাতে তুমি আমাকে ছুঁয়েছিলে। আজকেও ছুঁতে পারো। আমি মানা করবো না।"
+      },
+      {
+        "speaker": "mc",
+        "text": "তুই জানিস এটা কতদূর যেতে পারে?"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "জানি। তাও এসেছি।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা রিফাতের সামনে দাঁড়ায়। তার হাত দুটো নিচে ঝুলছে। সে অপেক্ষা করছে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আমি ভয় পাচ্ছি। কিন্তু তোমার কাছে না থাকলে আরও ভয় লাগে।"
+      },
+      {
+        "speaker": "mc",
+        "text": "তুই এখানে থেকে কী পাবি?"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তোমাকে। আর কিছু চাই না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত তার দিকে হাত বাড়ায়। আয়শা চোখ বন্ধ করে না। তাকিয়ে থাকে।"
+      }
+    ],
+    "choices": [
+      {
+        "text": "তাকে জড়িয়ে ধরো এবং বিছানার দিকে নিয়ে যাও (প্রোটেকশন লাগবে)",
+        "effects": {
+          "meters": {
+            "lust": 16,
+            "corruption": 12,
+            "affection": 7
+          },
+          "flags": {
+            "protected": true
+          },
+          "consumeItems": {
+            "condom": 1
+          }
+        },
+        "goto": "c2_ep3_to_bed",
+        "condition": {
+          "item": "condom",
+          "itemCount": 1
+        }
+      },
+      {
+        "text": "শুধু জড়িয়ে ধরো এবং চুপ করে দাঁড়িয়ে থাকো",
+        "effects": {
+          "meters": {
+            "affection": 13,
+            "trust": 8,
+            "lust": 5
+          }
+        },
+        "goto": "c2_ep3_only_hold"
+      },
+      {
+        "text": "তাকে চুমু খাও কিন্তু আর এগোও না",
+        "effects": {
+          "meters": {
+            "lust": 12,
+            "affection": 9,
+            "corruption": 4
+          }
+        },
+        "goto": "c2_ep3_kiss_only"
+      },
+      {
+        "text": "বলো ‘আজ যা, কাল আয়’ এবং দরজা খুলে দাও",
+        "effects": {
+          "meters": {
+            "trust": 4,
+            "lust": -6,
+            "affection": -3
+          }
+        },
+        "goto": "c2_ep3_send_back"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep1_full_stay",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "এখানেই থাক, দিন-রাত।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শার মুখে প্রথমবার সত্যিকারের হাসি ফোটে। সে রিফাতের হাত শক্ত করে ধরে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি পস্তাবে না তো?"
+      },
+      {
+        "speaker": "mc",
+        "text": "দেখা যাক।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "দিনটা নতুন নিয়মে শুরু হয়। দুপুরে সে আবার আসে — খাবার হাতে।"
+      }
+    ],
+    "goto": "c2_ep2_daytime_tension"
+  },
+  {
+    "id": "c2_ep1_secret_arrangement",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "দিনে নিচু তলায় থাক, রাতে আয়।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা মাথা নাড়ে। গোপন বোঝাপড়া পাকা হয়।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কেউ কিচ্ছু টের পাবে না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "দুপুরে খাবারের অজুহাতে সে আবার ওপরে আসে।"
+      }
+    ],
+    "goto": "c2_ep2_daytime_tension"
+  },
+  {
+    "id": "c2_ep1_temporary",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "আজকের মতো থাক, পরে দেখা যাবে।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা মাথা নিচু করে। অনিশ্চয়তা রয়েই যায়, কিন্তু আজকের দিনটা তাদের।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "…ঠিক আছে।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "দুপুরে সে খাবার নিয়ে আবার আসে।"
+      }
+    ],
+    "goto": "c2_ep2_daytime_tension"
+  },
+  {
+    "id": "c2_ep1_send_away",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "তোর যাওয়া উচিত।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আয়শা কিছুক্ষণ তাকিয়ে থাকে, তারপর চুপচাপ নিচে চলে যায়।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "ঘরটা আবার খালি। (stub — অধ্যায় ২ শাখা শেষ)"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep2_pull_inside",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রিফাত আয়শাকে ভিতরে টেনে দরজা বন্ধ করে। দিনের আলোয় দুজনেই এক মুহূর্ত থামে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কেউ দেখেনি তো?"
+      },
+      {
+        "speaker": "mc",
+        "text": "না।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "ভয় আর চাওয়া একসাথে। দুজনেই জানে, আসল রাত এখনো বাকি।"
+      }
+    ],
+    "goto": "c2_ep3_night_return"
+  },
+  {
+    "id": "c2_ep2_night_call",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "রাতে আয়।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত দরজা বন্ধ করে। আয়শা সিঁড়ি দিয়ে নামতে নামতে হাসে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আসবো। নক করবো না — দরজা খোলা রেখো।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রাত ১১:৪৫। দরজায় হালকা নক।"
+      }
+    ],
+    "goto": "c2_ep3_night_return"
+  },
+  {
+    "id": "c2_ep2_reject_today",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "আজ আর দরকার নেই।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত ব্যাগটা নেয়। আয়শার মুখ মলিন হয়, কিন্তু সে জেদ ধরে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তবু রাতে আসবো। মানা করলেও।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রাত ১১:৪৫। দরজায় হালকা নক। সে এসেছে।"
+      }
+    ],
+    "goto": "c2_ep3_night_return"
+  },
+  {
+    "id": "c2_ep2_soft_touch",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রিফাত আয়শার গালে হাত রাখে। সে চোখ বন্ধ করে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "তুমি এত ভালো কেন…"
+      },
+      {
+        "speaker": "narrator",
+        "text": "করিডোরে আর কেউ নেই। শুধু দুপুরের রোদ। রাতের অপেক্ষা শুরু।"
+      }
+    ],
+    "goto": "c2_ep3_night_return"
+  },
+  {
+    "id": "c2_ep3_to_bed",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "sex",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রিফাত প্রোটেকশন বের করে। আয়শা সম্মতিতে মাথা নাড়ে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "আস্তে…"
+      },
+      {
+        "speaker": "narrator",
+        "text": "আলো নিভে যায়। (protected · video)"
+      }
+    ],
+    "intimate": true
+  },
+  {
+    "id": "c2_ep3_only_hold",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রিফাত শুধু আয়শাকে জড়িয়ে ধরে। দুজনেই চুপ করে দাঁড়িয়ে থাকে।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "এটাই যথেষ্ট আজকের জন্য।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রাতটা শান্তভাবে কাটে। (stub — অধ্যায় ২ শাখা শেষ)"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep3_kiss_only",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "narrator",
+        "text": "রিফাত আয়শাকে চুমু খায়। আর এগোয় না।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "ধন্যবাদ… তাড়াহুড়ো না করার জন্য।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "দুজনেই হাসে। রাতটা এখানেই থামে। (stub — অধ্যায় ২ শাখা শেষ)"
+      }
+    ]
+  },
+  {
+    "id": "c2_ep3_send_back",
+    "location": "living_room",
+    "character": "ayesha",
+    "mode": "chat",
+    "imageMode": "random",
+    "time": {
+      "tod": "night"
+    },
+    "lines": [
+      {
+        "speaker": "mc",
+        "text": "আজ যা, কাল আয়।"
+      },
+      {
+        "speaker": "narrator",
+        "text": "রিফাত দরজা খুলে দেয়। আয়শা মাথা নিচু করে বেরিয়ে যায়।"
+      },
+      {
+        "speaker": "ayesha",
+        "text": "কাল আসবো…"
+      },
+      {
+        "speaker": "narrator",
+        "text": "সিঁড়িতে পায়ের শব্দ মিলিয়ে যায়। (stub — অধ্যায় ২ শাখা শেষ)"
+      }
+    ]
+  }
+]

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 import MeterChips from "@/components/hud/MeterChips";
@@ -16,6 +16,7 @@ import {
   mediaForScene,
   sceneMode,
   scenesById,
+  sexSoundFor,
 } from "@/lib/content";
 import { TOD_META, TOD_TINT } from "@/lib/presets";
 import { useReady } from "@/lib/useReady";
@@ -37,12 +38,25 @@ function Media() {
   const mode = sceneMode(scene);
   const char = media.characterId ? characterById(media.characterId) : undefined;
   const isAi = char?.ai === true;
+  // Sex-sound mute toggle. Sound plays only in sex scenes (video branch).
+  const [soundOff, setSoundOff] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // reset error state when the resolved src changes
   const srcKey = `${sceneId}:${lineIndex}:${media.src ?? "none"}`;
   useEffect(() => {
     setBroken(false);
   }, [srcKey]);
+
+  // If the browser blocked autoplay, retry with sound on the next user tap.
+  useEffect(() => {
+    if (mode !== "sex" || soundOff) return;
+    const kick = () => {
+      audioRef.current?.play().catch(() => {});
+    };
+    window.addEventListener("pointerdown", kick);
+    return () => window.removeEventListener("pointerdown", kick);
+  }, [mode, soundOff, srcKey]);
 
   if (!scene) return null;
 
@@ -79,6 +93,22 @@ function Media() {
         className="panel relative w-full max-w-[560px] overflow-hidden bg-black"
       >
         {badge}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setSoundOff((v) => {
+              const next = !v;
+              if (!next) audioRef.current?.play().catch(() => {});
+              return next;
+            });
+          }}
+          title={soundOff ? "Unmute sex sound" : "Mute sex sound"}
+          aria-label={soundOff ? "Unmute sex sound" : "Mute sex sound"}
+          className="absolute right-2 top-2 z-10 rounded-md bg-black/65 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white"
+        >
+          {soundOff ? "sound off" : "sound on"}
+        </button>
         <video
           key={media.src}
           src={media.src}
@@ -91,6 +121,17 @@ function Media() {
           className="h-[62dvh] max-h-[680px] min-h-[380px] w-full bg-black object-contain"
           onError={() => setBroken(true)}
         />
+        {/* Sex sound: only rendered for sex scenes, loops with the video. */}
+        {!soundOff && (
+          <audio
+            key={sexSoundFor(scene.id)}
+            ref={audioRef}
+            src={sexSoundFor(scene.id)}
+            autoPlay
+            loop
+            preload="auto"
+          />
+        )}
         {caption}
       </div>
     );

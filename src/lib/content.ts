@@ -116,6 +116,17 @@ export function randomIndex(seed: string, len: number): number {
   return hashSeed(seed) % len;
 }
 
+/** Sex-scene audio pool. Rule: sound plays ONLY when sex happens (mode sex). */
+export const sexSounds = [
+  "/media/audio/sex-sound-1.mp3",
+  "/media/audio/sex-sound-2.mp3",
+];
+
+/** Stable pick of a sex sound per scene — same scene always gets the same clip. */
+export function sexSoundFor(sceneId: string): string {
+  return sexSounds[randomIndex(`sex:${sceneId}`, sexSounds.length)];
+}
+
 /**
  * Chat portrait for a character.
  * Rule: photo = chat, NEVER video.
