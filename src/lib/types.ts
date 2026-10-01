@@ -188,5 +188,6 @@ export interface Snapshot {
   tod: TimeOfDay;
   prefs: Prefs;
   edits: Record<string, Record<string, string>>;
+  lastChoiceText?: string | null;
   savedAt?: number;
 }

@@ -18,7 +18,7 @@ export default function NavRail({
   extra,
 }: {
   active?: string;
-  extra?: { icon: string; label: string; onClick: () => void; on?: boolean }[];
+  extra?: { icon: string; label: string; onClick: () => void; on?: boolean; disabled?: boolean }[];
 }) {
   return (
     <div className="flex items-center gap-1">
@@ -28,6 +28,7 @@ export default function NavRail({
           type="button"
           className="ibtn"
           data-on={e.on ? "true" : undefined}
+          disabled={e.disabled}
           onClick={e.onClick}
           title={e.label}
           aria-label={e.label}

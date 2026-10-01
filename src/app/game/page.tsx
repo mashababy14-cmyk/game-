@@ -145,7 +145,40 @@ export default function GamePage() {
   const ended = useGameStore((s) => s.ended);
   const newGame = useGameStore((s) => s.newGame);
   const save = useGameStore((s) => s.saveToSlot);
+  const canBack = useGameStore((s) => s.past.length > 0);
   const [history, setHistory] = useState(false);
+  const [saveNote, setSaveNote] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!saveNote) return;
+    const t = setTimeout(() => setSaveNote(null), 2200);
+    return () => clearTimeout(t);
+  }, [saveNote]);
+
+  // Mouse back/forward side buttons: button 3 = back a line, button 4 = next
+  // line. preventDefault stops the browser from leaving the page.
+  useEffect(() => {
+    const goBack = () => useGameStore.getState().back();
+    const goNext = () => useGameStore.getState().advance();
+    const onDown = (e: MouseEvent) => {
+      if (e.button === 3) {
+        e.preventDefault();
+        goBack();
+      } else if (e.button === 4) {
+        e.preventDefault();
+        goNext();
+      }
+    };
+    const onUp = (e: MouseEvent) => {
+      if (e.button === 3 || e.button === 4) e.preventDefault();
+    };
+    window.addEventListener("mousedown", onDown);
+    window.addEventListener("mouseup", onUp);
+    return () => {
+      window.removeEventListener("mousedown", onDown);
+      window.removeEventListener("mouseup", onUp);
+    };
+  }, []);
 
   if (!ready)
     return (
@@ -178,15 +211,32 @@ export default function GamePage() {
     <main className="flex min-h-[100dvh] flex-col">
       <div className="sticky top-0 z-20 flex flex-col gap-1.5 bg-[color-mix(in_oklab,var(--bg-0)_70%,transparent)] px-2 py-2 backdrop-blur">
         <StatusStrip />
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-end gap-2">
+          {saveNote && (
+            <span className="pop text-[11px] text-[var(--muted)]">{saveNote}</span>
+          )}
           <NavRail
             active="/game"
             extra={[
+              {
+                icon: "back",
+                label: "Back",
+                disabled: !canBack,
+                onClick: () => useGameStore.getState().back(),
+              },
+              {
+                icon: "skip",
+                label: "Skip to choice",
+                onClick: () => useGameStore.getState().skip(),
+              },
               { icon: "history", label: "History", onClick: () => setHistory(true) },
               {
                 icon: "save",
                 label: "Quick save",
-                onClick: () => save(0),
+                onClick: () => {
+                  const ok = save(0);
+                  setSaveNote(ok ? "Saved to slot 1." : "Save failed — storage unavailable.");
+                },
               },
             ]}
           />

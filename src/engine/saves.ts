@@ -49,10 +49,24 @@ export function readSlot(i: number): Snapshot | null {
 
 export function writeSlot(i: number, snap: Snapshot): boolean {
   if (i < 0 || i >= SLOT_COUNT) return false;
-  const slots = readAll();
-  slots[i] = { ...snap, savedAt: Date.now() } as Snapshot;
-  writeAll(slots);
-  return true;
+  try {
+    const slots = readAll();
+    slots[i] = { ...snap, savedAt: Date.now() } as Snapshot;
+    writeAll(slots);
+    // Verify the write actually persisted (private-mode storage can silently fail).
+    const check = readAll()[i];
+    return !!check && check.sceneId === snap.sceneId;
+  } catch {
+    return false;
+  }
+}
+
+export function clearSlots(): void {
+  try {
+    localStorage.removeItem(SLOTS_KEY);
+  } catch {
+    /* storage unavailable */
+  }
 }
 
 export function deleteSlot(i: number): void {
@@ -64,16 +78,23 @@ export function deleteSlot(i: number): void {
 export function exportSnapshot(i: number, filename: string): boolean {
   const snap = readSlot(i);
   if (!snap) return false;
-  const blob = new Blob([JSON.stringify(snap, null, 2)], {
-    type: "application/json",
-  });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
-  return true;
+  try {
+    const blob = new Blob([JSON.stringify(snap, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    // Must be in the DOM for Safari; click() on a detached node is ignored.
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export async function importSnapshot(

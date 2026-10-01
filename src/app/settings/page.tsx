@@ -12,6 +12,7 @@ import {
   HISTORY_LIMITS,
 } from "@/lib/presets";
 import { clearSave } from "@/engine/save";
+import { clearSlots } from "@/engine/saves";
 import { useReady } from "@/lib/useReady";
 import { useGameStore } from "@/store/gameStore";
 
@@ -227,6 +228,7 @@ export default function SettingsPage() {
             onChange={() => {
               if (window.confirm("Erase all saves, names and progress?")) {
                 clearSave();
+                clearSlots();
                 resetAll();
               }
             }}

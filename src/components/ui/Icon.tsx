@@ -20,6 +20,7 @@ const P: Record<string, string> = {
   lock: "M6.5 10.5h11v9h-11zM9 10.5V8a3 3 0 0 1 6 0v2.5",
   check: "M5 12.5l4.5 4.5L19 7.5",
   trash: "M5 7h14M9.5 7V5h5v2M7 7l1 13h8l1-13",
+  skip: "M6 5v14l8-7zM16 5h2v14h-2z",
   download: "M12 4v11M8 11.5l4 4 4-4M5 20h14",
   upload: "M12 20V9M8 12.5l4-4 4 4M5 4h14",
   plus: "M12 5v14M5 12h14",

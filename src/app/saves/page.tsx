@@ -21,6 +21,7 @@ export default function SavesPage() {
   const saveToSlot = useGameStore((s) => s.saveToSlot);
   const loadFromSlot = useGameStore((s) => s.loadFromSlot);
   const [, bump] = useState(0);
+  const [status, setStatus] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
   const importTarget = useRef(0);
 
@@ -45,6 +46,11 @@ export default function SavesPage() {
         Autosave keeps the current run. Slots hold 6 manual copies — export as
         JSON to move them between phones.
       </p>
+      {status && (
+        <p className="pop mb-3 rounded-xl border border-[var(--line)] px-3 py-2 text-xs">
+          {status}
+        </p>
+      )}
 
       <div className="grid flex-1 auto-rows-min gap-2 sm:grid-cols-2">
         {Array.from({ length: SLOT_COUNT }, (_, i) => {
@@ -70,7 +76,12 @@ export default function SavesPage() {
                   title="Save here"
                   aria-label={`Save to slot ${i + 1}`}
                   onClick={() => {
-                    saveToSlot(i);
+                    const ok = saveToSlot(i);
+                    setStatus(
+                      ok
+                        ? `Saved to slot ${i + 1}.`
+                        : `Could not save to slot ${i + 1} — storage is unavailable.`,
+                    );
                     bump((n) => n + 1);
                   }}
                 >
@@ -83,9 +94,10 @@ export default function SavesPage() {
                   disabled={!snap}
                   onClick={() => {
                     if (loadFromSlot(i)) router.push("/game");
+                    else setStatus(`Slot ${i + 1} could not be loaded — save is damaged.`);
                   }}
                 >
-                  <Icon name="upload" size={15} />
+                  <Icon name="play" size={15} />
                 </button>
                 <button
                   className="ibtn !h-8 !min-w-8"
@@ -114,6 +126,7 @@ export default function SavesPage() {
                   disabled={!snap}
                   onClick={() => {
                     deleteSlot(i);
+                    setStatus(`Slot ${i + 1} deleted.`);
                     bump((n) => n + 1);
                   }}
                 >
@@ -132,7 +145,14 @@ export default function SavesPage() {
         className="hidden"
         onChange={async (e) => {
           const f = e.target.files?.[0];
-          if (f) await importSnapshot(f, importTarget.current);
+          if (f) {
+            const ok = await importSnapshot(f, importTarget.current);
+            setStatus(
+              ok
+                ? `Imported into slot ${importTarget.current + 1}.`
+                : `Import failed — that file is not a valid save.`,
+            );
+          }
           e.target.value = "";
           bump((n) => n + 1);
         }}
