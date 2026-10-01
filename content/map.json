@@ -1,0 +1,87 @@
+{
+  "locations": [
+    {
+      "id": "pharmacy",
+      "label": "Pharmacy",
+      "description": "Open till midnight. Condoms, safety pills, tea. Stock up before intimate nights.",
+      "icon": "bag",
+      "page": "/shop",
+      "zone": "Westside street",
+      "x": 12,
+      "y": 20
+    },
+    {
+      "id": "stairwell",
+      "label": "Stairwell",
+      "description": "Where the building talks. Everyone passes through.",
+      "icon": "dots",
+      "zone": "Stairwell",
+      "x": 50,
+      "y": 40
+    },
+    {
+      "id": "living_room",
+      "label": "Living Room",
+      "description": "Papers on the table, one light on.",
+      "icon": "home",
+      "sceneId": "c1_ep1_deuliya_rat",
+      "zone": "3rd floor",
+      "x": 26,
+      "y": 60
+    },
+    {
+      "id": "kitchen",
+      "label": "Kitchen",
+      "description": "Cold tea, unpaid bills, quiet.",
+      "icon": "store",
+      "sceneId": "c1_kitchen",
+      "zone": "3rd floor",
+      "x": 66,
+      "y": 64,
+      "time": { "tod": "night" }
+    },
+    {
+      "id": "roof",
+      "label": "Rooftop",
+      "description": "The city stops being loud up here.",
+      "icon": "cloud",
+      "sceneId": "c1_roof",
+      "zone": "3rd floor",
+      "x": 80,
+      "y": 22,
+      "unlock": { "meter": "trust", "gte": 45 }
+    },
+    {
+      "id": "ayesha_flat",
+      "label": "Ayesha's Flat",
+      "description": "One floor down. Light on until late.",
+      "icon": "user",
+      "sceneId": "c1_ayesha_flat",
+      "zone": "2nd floor",
+      "x": 30,
+      "y": 86,
+      "time": { "tod": "evening" },
+      "unlock": { "meter": "affection", "gte": 50 }
+    },
+    {
+      "id": "street",
+      "label": "Corner Street",
+      "description": "Late buses, cheaper tea, nobody asking questions.",
+      "icon": "map",
+      "sceneId": "c1_street",
+      "zone": "Westside street",
+      "x": 62,
+      "y": 88,
+      "unlock": { "meter": "stress", "lte": 40 }
+    }
+  ],
+  "links": [
+    { "from": "pharmacy", "to": "stairwell" },
+    { "from": "stairwell", "to": "living_room" },
+    { "from": "living_room", "to": "kitchen" },
+    { "from": "kitchen", "to": "roof" },
+    { "from": "stairwell", "to": "street" },
+    { "from": "stairwell", "to": "ayesha_flat" },
+    { "from": "ayesha_flat", "to": "street" }
+  ]
+}

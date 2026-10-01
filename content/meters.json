@@ -1,0 +1,9 @@
+{
+  "meters": [
+    { "id": "affection", "label": "Affection", "min": 0, "max": 100, "initial": 45, "icon": "heart", "positive": true },
+    { "id": "trust", "label": "Trust", "min": 0, "max": 100, "initial": 40, "icon": "shield", "positive": true },
+    { "id": "stress", "label": "Stress", "min": 0, "max": 100, "initial": 65, "icon": "zap", "positive": false },
+    { "id": "lust", "label": "Lust", "min": 0, "max": 100, "initial": 10, "icon": "flame", "positive": true },
+    { "id": "corruption", "label": "Corruption", "min": 0, "max": 100, "initial": 0, "icon": "skull", "positive": false }
+  ]
+}

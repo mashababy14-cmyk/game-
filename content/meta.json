@@ -1,0 +1,8 @@
+{
+  "title": "Late Night",
+  "subtitle": "Chapter One · Westside Flat",
+  "version": "0.2.0",
+  "startingMoney": 220,
+  "firstSceneId": "c1_ep1_deuliya_rat",
+  "startTime": { "day": 1, "tod": "night" }
+}

@@ -1,0 +1,10 @@
+{
+  "stock": [
+    { "itemId": "tea", "price": 15, "repeat": true },
+    { "itemId": "painkiller", "price": 40, "repeat": true },
+    { "itemId": "condom", "price": 30, "repeat": true },
+    { "itemId": "safety_pill", "price": 80, "repeat": true },
+    { "itemId": "umbrella", "price": 120 },
+    { "itemId": "cinema", "price": 180 }
+  ]
+}

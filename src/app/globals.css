@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #8b7cf6;
+  --accent-2: #5ec8f2;
+  --bg-0: #12141d;
+  --bg-1: #171a25;
+  --panel: #1b1e2b;
+  --panel-2: #222636;
+  --line: #2b3040;
+  --ink: #e9ebf3;
+  --muted: #8e95ab;
+  --good: #5fd0a0;
+  --danger: #e0607f;
+  --radius: 14px;
+  --fs: 15px;
+  --anim: 1;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--ink);
+  font-size: var(--fs);
+  background:
+    radial-gradient(
+      1100px 560px at 82% -12%,
+      color-mix(in oklab, var(--accent) 20%, transparent),
+      transparent 62%
+    ),
+    radial-gradient(
+      900px 520px at 6% 112%,
+      color-mix(in oklab, var(--accent-2) 13%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(168deg, var(--bg-1), var(--bg-0) 55%, #0f1118);
+  background-attachment: fixed;
+  overscroll-behavior: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --anim: 0;
+  }
+}
+
+@layer components {
+  .panel {
+    background: color-mix(in oklab, var(--panel) 88%, transparent);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    backdrop-filter: blur(10px);
+  }
+
+  /* icon button: 40px touch target, no text */
+  .ibtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    color: var(--muted);
+    transition:
+      color 0.16s ease,
+      background 0.16s ease,
+      border-color 0.16s ease;
+  }
+  .ibtn:hover,
+  .ibtn:focus-visible {
+    color: var(--ink);
+    background: color-mix(in oklab, var(--panel-2) 82%, transparent);
+    border-color: var(--line);
+  }
+  .ibtn[data-on="true"] {
+    color: var(--accent);
+    border-color: color-mix(in oklab, var(--accent) 45%, transparent);
+    background: color-mix(in oklab, var(--accent) 14%, transparent);
+  }
+  .ibtn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .field {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: color-mix(in oklab, var(--bg-0) 70%, transparent);
+    border-radius: 10px;
+    padding: 0.5rem 0.65rem;
+    color: var(--ink);
+    font-size: 0.9rem;
+    outline: none;
+  }
+  .field:focus {
+    border-color: var(--accent);
+  }
+
+  .label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .dtext {
+    font-size: calc(var(--fs) * 1.02);
+    line-height: 1.75;
+  }
+
+  .meter-track {
+    height: 3px;
+    flex: 1;
+    border-radius: 999px;
+    background: var(--bg-0);
+    overflow: hidden;
+  }
+  .meter-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(
+      90deg,
+      var(--accent),
+      var(--accent-2)
+    );
+  }
+
+  .fade {
+    animation: fade calc(0.22s * var(--anim)) ease-out;
+  }
+  .pop {
+    animation: pop calc(0.18s * var(--anim)) ease-out;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "tea",
+      "name": "Cup of Tea",
+      "description": "Strong, sweet, cheap. Good for long nights.",
+      "icon": "sun",
+      "effect": { "meters": { "trust": 2, "stress": -3 } }
+    },
+    {
+      "id": "painkiller",
+      "name": "Painkiller",
+      "description": "Two tablets and the headache is gone.",
+      "icon": "sparkle",
+      "effect": { "meters": { "stress": -12 } }
+    },
+    {
+      "id": "umbrella",
+      "name": "Umbrella",
+      "description": "It will rain again by morning.",
+      "icon": "shield",
+      "effect": { "meters": { "affection": 2 } }
+    },
+    {
+      "id": "cinema",
+      "name": "Cinema Ticket",
+      "description": "One seat, Friday evening show.",
+      "icon": "sparkle",
+      "effect": { "meters": { "affection": 8, "stress": -6 } }
+    },
+    {
+      "id": "condom",
+      "name": "Condom",
+      "description": "Single-use protection. Auto-consumed when you choose a protected intimate moment.",
+      "icon": "shield",
+      "usable": false
+    },
+    {
+      "id": "safety_pill",
+      "name": "Safety Pill",
+      "description": "Backup protection. Use from the bag after a risky night to feel safe.",
+      "icon": "sparkle",
+      "effect": { "meters": { "stress": -8 }, "flags": { "pill_protected": true } }
+    }
+  ]
+}
